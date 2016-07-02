@@ -1,0 +1,100 @@
+{
+  "info": {
+    "name": "Nick Ng",
+    "email": "nicholas.cj.ng",
+    "emaildomain": "gmail.com",
+    "url": "nick-ng.com",
+    "href": "http://nick-ng.com",
+    "twitter": "nickHyphenNg",
+    "github": "nick-ng",
+    "summary": "I'm Nick and I want to be a software developer because I enjoy building things and solving problems. I'm a self-taught programmer who learns quickly and independently and I am looking for opportunities to expand and develop my skills.",
+    "skills": [
+      
+    ]
+  },
+  "content": [
+    {"category": "Work Experience",
+      "items": [
+        {"company": "The University of Auckland",
+          "positions": [
+            {"name": "Teaching Assistant",
+              "duration": "2009 &ndash 2016",
+              "info": "Tutoring, lab demonstration and marking",
+              "hide": false
+            },
+            {"name": "Summer Studentship",
+              "duration": "2005 &ndash 2006",
+              "info": "FORTRAN programming and experimental work",
+              "hide": false
+            }
+          ]
+        }
+      ]
+    },
+    {"category": "Education",
+      "items": [
+        {"school": "The University of Auckland",
+          "degrees": [
+            {"name": "Ph.D",
+              "join": " in ",
+              "subject": "Mechanical Engineering",
+              "end": "(Unfinished)",
+              "info": "",
+              "hide": false
+            },
+            {"name": "Master",
+              "join": " of ",
+              "subject": "Mechanical Engineering",
+              "end": "2009",
+              "info": "First Class Honours",
+              "hide": false
+            },
+            {"name": "Bachelor",
+              "join": " of ",
+              "subject": "Mechanical Engineering",
+              "end": "2007",
+              "info": "",
+              "hide": false
+            }
+          ]
+        }
+      ]
+    },
+    {"category": "Projects",
+      "items": [
+        {"name": "Guild Ball Health Tracker",
+          "github": "NickGBHealth",
+          "url": "gbh.nick-ng.com",
+          "href": "http://gbh.nick-ng.com",
+          "tech": [
+            "Node.js",
+            "Express",
+            "Redis",
+            "jQuery",
+            "Socket.IO",
+            "Underscore.js",
+            "Bootstrap"
+          ],
+          "info": "A web-app to keep track of characters' health for the table-top game Guild Ball. Uses Socket.IO to share game information between two players and a spectator page. I originally started this because I though it would be interesting to develop and a equivalent tool didn't exist. I ended up learning a lot about UI design for mobile devices after using it during a game.",
+          "hide": false
+        },
+        {"name": "Tournament Organiser",
+          "github": "NickTTnjs",
+          "url": "tt.nick-ng.xyz",
+          "href": "http://tt.nick-ng.xyz",
+          "tech": [
+            "Node.js",
+            "Express",
+            "PostgreSQL",
+            "jQuery",
+            "Socket.IO",
+            "Underscore.js",
+            "Bootstrap"
+          ],
+          "info": "A cloud-based tournament organisation web-app deployed on Heroku's cloud Platform-as-a-Service. It provides a place to store player details and tools to run the tournament. I started this project to learn Node.js, SQL and front-end development. As the project became larger, I had to learn strategies to stay on track such as maintaining a backlog.",
+          "hide": false
+        }
+      ]
+    }
+  ]
+}
