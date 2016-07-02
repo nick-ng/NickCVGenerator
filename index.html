@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Nick's CV Generator</title>
+    <link rel="shortcut icon" href="./images/narwhal-32.png" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/genericons.css" rel="stylesheet">
+    <link href="./css/extra.css" rel="stylesheet">
+    <script src="./underscore-min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="./js/bootstrap.min.js" defer></script>
+    <script defer>
+      $(function() {
+        $.ajax({
+          dataType: 'text',
+          url: './nick-ng.json',
+          success: function(text) {
+            var data = JSON.parse(text);
+            $.ajax({
+              dataType: 'text',
+              url: './nick-ng-asdf.json',
+              success: function(text2) {
+                console.log(text2);
+                var pData = JSON.parse(text);
+                putData(data, pData);
+              },
+              error: function() {
+                putData(data, false);
+              }
+            });
+          }
+        });
+      });
+      function putData(data, pData) {
+        putInfo(data.info, pData);
+      }
+      
+      function putInfo(info, pData) {
+        console.log(info.name);
+        $( '#big-name' ).text(info.name);
+        var infoHTML = '<img src="' + info.picture + '" class="img-responsive">';
+        infoHTML += '<ul class="list-unstyled">';
+        
+        var fullEmail = info.email + '@' + info.emaildomain;
+        infoHTML += '<li><a href="mailto:' + fullEmail + '">';
+        infoHTML += '<span class="genericon genericon-mail"></span>&nbsp;';
+        infoHTML += fullEmail + '</a></li>';
+        
+        if (pData) {
+          infoHTML += '<li><span class="genericon genericon-handset"></span>&nbsp;';
+          infoHTML += pData.info.phone + '</li>';
+        }
+        
+        infoHTML += '<li><a href="' + info.href + '">';
+        infoHTML += '<span class="genericon genericon-home"></span>&nbsp;';
+        infoHTML += info.url + '</a></li>';
+        
+        infoHTML += '<li><a href="https://github.com/' + info.github + '">';
+        infoHTML += '<span class="genericon genericon-github"></span>&nbsp;';
+        infoHTML += info.github + '</a></li>';
+        
+        infoHTML += '<li><a href="https://twitter.com/' + info.twitter + '">';
+        infoHTML += '<span class="genericon genericon-twitter"></span>&nbsp;';
+        infoHTML += '@' + info.url + '</a></li>';
+        
+        $( '#info' ).html(infoHTML);
+        //content.info;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1 id="big-name" class="text-center"></h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div id="info"></div>
+          <div id="summary"></div>
+          <div id="skills"></div>
+        </div>
+        <div class="col-md-9">
+          <div id="projects"></div>
+          <div id="work"></div>
+          <div id="education"></div>
+        </div>
+      </div>
+    </div>
+    <footer class="text-center">
+      &copy; 2016 <a href="http://nick-ng.com" target="_blank">Nick Ng</a>, <a href="https://github.com/nick-ng/NickCVGenerator" target="_blank">GitHub</a><br>
+      <a href="http://glyphicons.com/">GLYPHICONS</a> used as part of <a href="http://getbootstrap.com/">Bootstrap</a>
+    </footer>
+  </body>
+</html>
+
+
