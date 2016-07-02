@@ -9,10 +9,60 @@
     "twitter":"nickHyphenNg",
     "github":"nick-ng",
     "summary":"I'm Nick and I want to be a software developer because I enjoy building things and solving problems. I'm a self-taught programmer who learns quickly and independently and I am looking for opportunities to expand and develop my skills.",
-    "skills":[
-      "hello"]
+    "techskills":[
+      "Node.js",
+      "jQuery",
+      "Python",
+      "Express",
+      "Redis",
+      "PostgreSQL",
+      "Socket.IO",
+      "Bootstrap",
+      "CSS",
+      "HTML"
+    ],
+    "softskills":[]
   },
   "content":{
+    "projects":{
+      "name":"Projects",
+      "items":[
+        {
+          "name":"Guild Ball Health Tracker",
+          "github":"/nick-ng/NickGBHealth",
+          "url":"gbh.nick-ng.com",
+          "href":"http://gbh.nick-ng.com",
+          "tech":[
+            "Node.js",
+            "Express",
+            "Redis",
+            "jQuery",
+            "Socket.IO",
+            "Underscore.js",
+            "Bootstrap"
+          ],
+          "info":"A web-app to keep track of characters' health for the table-top game Guild Ball. Uses Socket.IO to share game information between two players and a spectator page. I originally started this because I though it would be interesting to develop and a equivalent tool didn't exist. I ended up learning a lot about UI design for mobile devices after using it during a game.",
+          "hide":false
+        },
+        {
+          "name":"Tournament Organiser",
+          "github":"/nick-ng/NickTTnjs",
+          "url":"tt.nick-ng.xyz",
+          "href":"http://tt.nick-ng.xyz",
+          "tech":[
+            "Node.js",
+            "Express",
+            "PostgreSQL",
+            "jQuery",
+            "Socket.IO",
+            "Underscore.js",
+            "Bootstrap"
+          ],
+          "info":"A cloud-based tournament organisation web-app deployed on Heroku's cloud Platform-as-a-Service. It provides a place to store player details and tools to run the tournament. I started this project to learn Node.js, SQL and front-end development. As the project became larger, I had to learn strategies to stay on track such as maintaining a backlog.",
+          "hide":false
+        }
+      ]
+    },
     "work":{
       "name":"Work Experience",
       "items":[
@@ -66,45 +116,6 @@
               "hide":false
             }
           ]
-        }
-      ]
-    },
-    "projects":{
-      "name":"Projects",
-      "items":[
-        {
-          "name":"Guild Ball Health Tracker",
-          "github":"NickGBHealth",
-          "url":"gbh.nick-ng.com",
-          "href":"http://gbh.nick-ng.com",
-          "tech":[
-            "Node.js",
-            "Express",
-            "Redis",
-            "jQuery",
-            "Socket.IO",
-            "Underscore.js",
-            "Bootstrap"
-          ],
-          "info":"A web-app to keep track of characters' health for the table-top game Guild Ball. Uses Socket.IO to share game information between two players and a spectator page. I originally started this because I though it would be interesting to develop and a equivalent tool didn't exist. I ended up learning a lot about UI design for mobile devices after using it during a game.",
-          "hide":false
-        },
-        {
-          "name":"Tournament Organiser",
-          "github":"NickTTnjs",
-          "url":"tt.nick-ng.xyz",
-          "href":"http://tt.nick-ng.xyz",
-          "tech":[
-            "Node.js",
-            "Express",
-            "PostgreSQL",
-            "jQuery",
-            "Socket.IO",
-            "Underscore.js",
-            "Bootstrap"
-          ],
-          "info":"A cloud-based tournament organisation web-app deployed on Heroku's cloud Platform-as-a-Service. It provides a place to store player details and tools to run the tournament. I started this project to learn Node.js, SQL and front-end development. As the project became larger, I had to learn strategies to stay on track such as maintaining a backlog.",
-          "hide":false
         }
       ]
     }

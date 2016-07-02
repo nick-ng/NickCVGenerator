@@ -2,6 +2,19 @@ body {
     font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+p {
+    vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6, .h-zero {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.h-zero {
+    font-size: 64px;
+    color: #005656;
+}
+
+th {
+    column-span: all;
 }

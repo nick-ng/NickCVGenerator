@@ -21,10 +21,10 @@
             var data = JSON.parse(text);
             $.ajax({
               dataType: 'text',
-              url: './nick-ng-asdf.json',
+              url: './nick-ng-private.json',
               success: function(text2) {
                 console.log(text2);
-                var pData = JSON.parse(text);
+                var pData = JSON.parse(text2);
                 putData(data, pData);
               },
               error: function() {
@@ -35,14 +35,12 @@
         });
       });
       function putData(data, pData) {
-        putInfo(data.info, pData);
-      }
-      
-      function putInfo(info, pData) {
-        console.log(info.name);
+        var info = data.info;
+        var content = data.content;
         $( '#big-name' ).text(info.name);
-        var infoHTML = '<img src="' + info.picture + '" class="img-responsive">';
-        infoHTML += '<ul class="list-unstyled">';
+        var pictureHTML = '<img src="' + info.picture + '" class="img-responsive">';
+        $( '#picture' ).html(pictureHTML);
+        var infoHTML = '<h3>Contact</h3><ul class="list-unstyled">';
         
         var fullEmail = info.email + '@' + info.emaildomain;
         infoHTML += '<li><a href="mailto:' + fullEmail + '">';
@@ -66,28 +64,70 @@
         infoHTML += '<span class="genericon genericon-twitter"></span>&nbsp;';
         infoHTML += '@' + info.url + '</a></li>';
         
+        infoHTML += '</ul>';
         $( '#info' ).html(infoHTML);
-        //content.info;
-      }
+        
+        $( '#summary' ).html( '<p>' + info.summary + '</p>' );
+        
+        var skillsHTML = '';
+        if (info.techskills.length > 0) {
+          skillsHTML += '<h3>Technical Skills</h3><ul>';
+          for (var i = 0; i < info.techskills.length; i++) {
+            skillsHTML += '<li>' + info.techskills[i] + '</li>';
+          }
+        }
+        if (info.softskills.length > 0) {
+          skillsHTML += '<h3>Other Skills</h3><ul>';
+          for (var i = 0; i < info.softskills.length; i++) {
+            skillsHTML += '<li>' + info.softskills[i] + '</li>';
+          }
+        }
+        $( '#skills' ).html(skillsHTML);
+        for (var i = 0; i < _.keys(content).length; i++) {
+          var key = _.keys(content)[i];
+          console.log(key);
+          var html = '<h2>' + content[key].name + '</h2>';
+          for (var j = 0; j < content[key].items.length; j++) {
+            var item = content[key].items[j];
+            console.log(item);
+            if (!item.hide) {
+              html += '<table class="table"><thead><tr>';
+              html += '<th colspan="2"><h3>' + item.name + '</h3></th></thead></tr><tbody><tr><td>';
+              if (item.tech) {
+                html += '<ul class="list-unstyled">';
+                for (var k = 0; k < item.tech.length; k++) {
+                  html += '<li>' + item.tech[k] + '</li>';
+                }
+                html += '</ul></td><td>';
+              } else {
+                html += '';
+              }
+              html += '<a href="https://github.com' + item.github + '">github.com' + item.github + '</a>';
+              if (item.url && item.href) {
+                html += ' &mdash; <a href="' + item.href + '">' + item.url + '</a>';
+              }
+              html += '<br>' + item.info + '</td></tr></tbody></table>';
+            }
+          }
+          $( '#content' ).append(html);
+        };
+      };  
     </script>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-12">
-          <h1 id="big-name" class="text-center"></h1>
+        <div id="big-name" class="col-sm-12 h-zero">
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-4">
+          <div id="picture"></div>
           <div id="info"></div>
           <div id="summary"></div>
           <div id="skills"></div>
         </div>
-        <div class="col-md-9">
-          <div id="projects"></div>
-          <div id="work"></div>
-          <div id="education"></div>
+        <div id="content" class="col-md-8">
         </div>
       </div>
     </div>
